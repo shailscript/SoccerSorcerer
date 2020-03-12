@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//Shailendra Shukla - 301057291
+
 using Microsoft.AspNetCore.Mvc;
+using SoccerSorcerer.Models;
 
 namespace SoccerSorcerer.Controllers
 {
     public class ClubsController : Controller
     {
-        public IActionResult Index()
+
+        public IActionResult Index() => View(FakeClubRepository.Clubs);
+
+        [HttpGet]
+        public IActionResult Create() => View();
+
+        [HttpPost]
+        public IActionResult Create(Club c)
         {
-            return View();
+            FakeClubRepository.AddClub(c);
+            return RedirectToAction("Index");
         }
 
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        public IActionResult Show()
-        {
-            return View();
-        }
+        public IActionResult Show() => View();
     }
 }

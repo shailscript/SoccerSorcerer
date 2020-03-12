@@ -1,54 +1,46 @@
-﻿@{
+﻿@*Shailendra Shukla - 301057291*@
+
+@model Club
+@{
     ViewData["Title"] = "Create Club";
 }
 
 <div class="container m-2 mx-auto">
-    <form asp-action="Index">
+    <form asp-action="Create" method="post">
         <div class="form-group">
-            <label for="name">Club name</label>
-            <input type="text" class="form-control" id="name" placeholder="Barsenal FC">
+            <label asp-for="Name">Club name</label>
+            <input asp-for="Name" class="form-control" placeholder="Barsenal FC">
         </div>
         <div class="form-group">
-            <label for="manager">Manager name</label>
-            <input type="text" class="form-control" id="manager" placeholder="Michael Bartate">
+            <label asp-for="Manager">Manager name</label>
+            <input asp-for="Manager" class="form-control" placeholder="Michael Bartate">
         </div>
         <div class="form-group">
-            <label for="stadium">Arena/Stadium</label>
-            <input type="text" class="form-control" id="stadium" placeholder="Scotiadank Arena">
+            <label asp-for="Stadium">Arena/Stadium</label>
+            <input asp-for="Stadium" class="form-control" placeholder="Scotiadank Arena">
         </div>
         <div class="form-group">
-            <label for="owner">Owner</label>
-            <input type="text" class="form-control" id="owner" placeholder="The Best Co.">
+            <label asp-for="Owner">Owner</label>
+            <input asp-for="Owner" class="form-control" placeholder="The Best Co.">
         </div>
         <div class="form-group">
-            <label for="website">Website</label>
-            <input type="text" class="form-control" id="owner" placeholder="www.barsenalfc.com">
-        </div>
-
-        <div class="form-group">
-            <label for="location">Location</label>
-            <select class="form-control" id="location">
-                <option value="AB">Alberta</option>
-                <option value="BC">British Columbia</option>
-                <option value="MB">Manitoba</option>
-                <option value="NB">New Brunswick</option>
-                <option value="NL">Newfoundland and Labrador</option>
-                <option value="NS">Nova Scotia</option>
-                <option value="ON">Ontario</option>
-                <option value="PE">Prince Edward Island</option>
-                <option value="QC">Quebec</option>
-                <option value="SK">Saskatchewan</option>
-                <option value="NT">Northwest Territories</option>
-                <option value="NU">Nunavut</option>
-                <option value="YT">Yukon</option>
-            </select>
+            <label asp-for="Website">Website</label>
+            <input asp-for="Website" class="form-control" placeholder="www.barsenalfc.com">
         </div>
 
         <div class="form-group">
-            <label for="description">Club Description</label>
-            <textarea class="form-control" id="description" rows="3" placeholder="Type something awesome here..."></textarea>
+            <label asp-for="Location">Location</label>
+            <input asp-for="Location" class="form-control" placeholder="Barcelona" />
         </div>
 
-        <button class="btn btn-success" type="submit" name="submit" value="submit">Create Club</button>
+        <div class="form-group">
+            <label asp-for="Description">Club Description</label>
+            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Type something awesome here..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success" type="submit" name="submit" value="submit">Create Club</button>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-danger">Cancel</a>
+        </div>
     </form>
 </div>
