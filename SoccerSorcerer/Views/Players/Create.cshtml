@@ -1,35 +1,41 @@
-﻿@{
+﻿@*Shailendra Shukla - 301057291*@
+
+@model Player
+@{
     ViewData["Title"] = "Add Player";
 }
 
 <div class="container m-2 mx-auto">
     <form asp-action="Index">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label asp-for="Name">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Christiano Someone">
         </div>
         <div class="form-group">
-            <label for="salary">Salary</label>
-            <input type="text" class="form-control" id="salary" placeholder="100,000">
+            <label asp-for="Salary">Salary</label>
+            <input asp-for="Salary" class="form-control">
         </div>
         <div class="form-group">
-            <label for="club">Club</label>
-            <input type="text" class="form-control" id="club" placeholder="The Best Soccer Club">
+            <label asp-for="Club">Club</label>
+            <input asp-for="Club" class="form-control" placeholder="The Best Soccer Club">
         </div>
         <div class="form-group">
-            <label for="number">Number</label>
-            <input type="text" class="form-control" id="number" placeholder="10">
+            <label asp-for="JerseyNumber">Jersey Number</label>
+            <input asp-for="JerseyNumber" class="form-control" placeholder="10">
         </div>
         <div class="form-group">
-            <label for="position">Position</label>
-            <input type="text" class="form-control" id="position" placeholder="Forward">
+            <label asp-for="Position">Position</label>
+            <input asp-for="Position" class="form-control" placeholder="Forward">
         </div>
 
         <div class="form-group">
-            <label for="description">Player Description</label>
-            <textarea class="form-control" id="description" rows="3" placeholder="Type something awesome here..."></textarea>
+            <label asp-for="Description">Player Description</label>
+            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Type something awesome here..."></textarea>
         </div>
 
-        <button class="btn btn-success" type="submit" name="submit" value="submit">Add Player</button>
+        <div class="form-group">
+            <button class="btn btn-success" type="submit" name="submit" value="submit">Add Player</button>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-danger">Cancel</a>
+        </div>
     </form>
 </div>
