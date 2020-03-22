@@ -5,12 +5,13 @@ using System.Linq;
 
 namespace SoccerSorcerer.Models
 {
-    public class FakeClubRepository
+    public class FakeClubRepository //: IClubRepository
     {
         private static List<Club> clubs = new List<Club>
         {
             new Club
             {
+                Id = 1,
                 Name = "Juventus",
                 Manager = "Michael Someone",
                 Stadium = "ABC Stadium",
@@ -21,6 +22,7 @@ namespace SoccerSorcerer.Models
             },
             new Club
             {
+                Id = 2,
                 Name = "Soccer Sorcerer",
                 Manager = "Shail Napster",
                 Stadium = "Best Stadium",
