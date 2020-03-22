@@ -23,8 +23,8 @@ namespace SoccerSorcerer
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration["Data:SoccerSorcerer:ConnectionString"]
-                    )
-                );
+                )
+            );
             services.AddTransient<IClubRepository, EFClubRepository>();
             services.AddMvc();
         }
@@ -38,6 +38,7 @@ namespace SoccerSorcerer
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseStatusCodePages();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -45,6 +46,8 @@ namespace SoccerSorcerer
                     pattern: "{controller=Home}/{action=Index}"
                 );
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }
