@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace SoccerSorcerer.Models
 {
-    interface IClubRepository
+    public interface IClubRepository
     {
+        IQueryable<Club> Clubs { get; }
         public void AddClub();
     }
 }

@@ -33,11 +33,11 @@ namespace SoccerSorcerer.Models
             }
         };
 
-        public static IEnumerable<Club> Clubs
+        public static IQueryable<Club> Clubs
         {
             get
             {
-                return clubs;
+                return clubs.AsQueryable<Club>();
             }
         }
 

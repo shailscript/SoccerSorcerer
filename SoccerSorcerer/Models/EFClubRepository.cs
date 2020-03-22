@@ -17,5 +17,6 @@ namespace SoccerSorcerer.Models
         {
 
         }
+        public IQueryable<Club> Clubs => context.Clubs;
     }
 }
