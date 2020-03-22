@@ -7,8 +7,14 @@ namespace SoccerSorcerer.Controllers
 {
     public class ClubsController : Controller
     {
+        private IClubRepository repository;
 
-        public IActionResult Index() => View(FakeClubRepository.Clubs);
+        public ClubsController(IClubRepository repo)
+        {
+            repository = repo;
+        }
+
+        public IActionResult Index() => View(repository.Clubs);
 
         [HttpGet]
         public IActionResult Create() => View();
