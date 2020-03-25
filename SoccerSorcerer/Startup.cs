@@ -26,6 +26,7 @@ namespace SoccerSorcerer
                 )
             );
             services.AddTransient<IClubRepository, EFClubRepository>();
+            services.AddTransient<IPlayerRepository, EFPlayerRepository>();
             services.AddMvc();
         }
 
