@@ -6,7 +6,7 @@
 }
 
 <div class="container m-2 mx-auto">
-    <form asp-action="Index">
+    <form asp-action="Create" method="post">
         <div class="form-group">
             <label asp-for="Name">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Christiano Someone">
@@ -15,6 +15,9 @@
             <label asp-for="Salary">Salary</label>
             <input asp-for="Salary" class="form-control">
         </div>
+        
+        @* TODO: Show the list of available clubs, and when user selects the club add it to the player payload to save.*@
+
         <div class="form-group">
             <label asp-for="Club">Club</label>
             <input asp-for="Club" class="form-control" placeholder="The Best Soccer Club">

@@ -1,5 +1,7 @@
 ﻿@*Shailendra Shukla - 301057291*@
 
+@model IEnumerable<Player>
+
 @{
     ViewData["Title"] = "Players";
 }
@@ -15,7 +17,7 @@
     </div>
 
     <div>
-        @for (int i = 1; i < 10; i++)
+        @foreach (Player p in Model)
         {
             <div class="card mb-3 mx-auto" style="max-width: 540px;">
                 <div class="row no-gutters">
@@ -24,13 +26,14 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Player @i</h5>
-                            <p class="card-text">Description: Player @i  is a great player. A one liner description of the player, salary info, club, number and position.</p>
-                            <p class="card-text"><small class="text-muted">Past Club: The Best Soccer Club</small></p>
+                            <h5 class="card-title">@p.Name</h5>
+                            <p class="card-text">Description: @p.Description</p>
+                            <p class="card-text"><small class="text-muted">Club: @p.Club.Name</small></p>
                             <p>
                                 <a href="#">Reassign Player</a> |
                                 <a href="#">Deassign Player</a>
                             </p>
+                            <a class="btn btn-primary text-white" asp-controller="Players" asp-action="Show" asp-route-id="@p.Name">View details</a>
                         </div>
                     </div>
                 </div>
