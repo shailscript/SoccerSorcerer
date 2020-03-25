@@ -22,7 +22,8 @@ namespace SoccerSorcerer.Controllers
         [HttpPost]
         public IActionResult Create(Club c)
         {
-            FakeClubRepository.AddClub(c);
+            //FakeClubRepository.AddClub(c);
+            repository.AddClub(c);
             return RedirectToAction("Index");
         }
 

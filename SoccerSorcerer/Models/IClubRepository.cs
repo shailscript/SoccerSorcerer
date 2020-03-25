@@ -8,6 +8,6 @@ namespace SoccerSorcerer.Models
     public interface IClubRepository
     {
         IQueryable<Club> Clubs { get; }
-        public void AddClub();
+        public void AddClub(Club club);
     }
 }

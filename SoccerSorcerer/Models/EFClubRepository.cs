@@ -13,9 +13,10 @@ namespace SoccerSorcerer.Models
         {
             context = ctx;
         }
-        public void AddClub()
+        public void AddClub(Club club)
         {
-
+            context.Clubs.Add(club);
+            context.SaveChanges();
         }
         public IQueryable<Club> Clubs => context.Clubs;
     }
